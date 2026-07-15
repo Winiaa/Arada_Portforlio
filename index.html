@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       Winia Nawasirikhun — Teacher Assistant Portfolio
+       Built with HTML5, Bootstrap 5, Bootstrap Icons, vanilla JS
+       Edit sections directly in this file. Styles live in style.css
+       ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Winia Nawasirikhun — Teacher Assistant Portfolio</title>
+  <meta name="description" content="Portfolio of Winia Nawasirikhun — Teacher Assistant, Kindergarten Support, IT Graduate." />
+
+  <!-- Google Fonts: Fraunces (warm serif) + Nunito (friendly body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Custom stylesheet -->
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="90" tabindex="0">
+
+  <!-- ============================================================
+       1) NAVIGATION BAR (fixed, responsive, hamburger on mobile)
+       ============================================================ -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top navbar-custom" data-testid="main-nav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home" data-testid="navbar-brand">
+        <span class="brand-mark"><i class="bi bi-flower1"></i></span>
+        <span class="brand-name">Winia<span class="brand-dot">.</span></span>
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+        aria-controls="navMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        data-testid="nav-toggle-btn"
+      >
+        <i class="bi bi-list"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#home" data-testid="nav-home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about" data-testid="nav-about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience" data-testid="nav-experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills" data-testid="nav-skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#responsibilities" data-testid="nav-responsibilities">Responsibilities</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery" data-testid="nav-gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certificates" data-testid="nav-certificates">Certificates</a></li>
+          <li class="nav-item"><a class="nav-link nav-cta" href="#contact" data-testid="nav-contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       2) HERO SECTION
+       ============================================================ -->
+  <header id="home" class="hero-section" data-testid="hero-section">
+    <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+    <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7 order-2 order-lg-1 reveal">
+          <span class="eyebrow">
+            <i class="bi bi-stars"></i> Hello, welcome to my portfolio
+          </span>
+          <h1 class="hero-title">
+            Hi, I'm <span class="accent-text">Winia</span><br />
+            Nawasirikhun
+          </h1>
+          <p class="hero-role" data-testid="hero-role">
+            Teacher Assistant <span class="sep">•</span> Kindergarten Support <span class="sep">•</span> IT Graduate
+          </p>
+          <p class="hero-intro">
+            A caring and responsible Teacher Assistant with experience supporting
+            kindergarten students, preparing classroom activities, teaching basic
+            lessons, assisting teachers, communicating with parents, and helping
+            children learn in a safe and positive environment.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#experience" class="btn btn-primary-soft" data-testid="hero-view-experience-btn">
+              <i class="bi bi-briefcase"></i> View My Experience
+            </a>
+            <a href="#contact" class="btn btn-outline-soft" data-testid="hero-contact-btn">
+              <i class="bi bi-envelope-heart"></i> Contact Me
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 order-1 order-lg-2 text-center reveal">
+          <div class="profile-frame" data-testid="hero-profile-photo">
+            <!-- Replace src with your real photo when ready -->
+            <div class="profile-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80"
+                alt="Profile photo of Winia Nawasirikhun"
+                class="profile-image"
+                onerror="this.style.display='none'; this.parentElement.classList.add('profile-fallback');"
+              />
+              <div class="profile-fallback-content">
+                <i class="bi bi-person-circle"></i>
+                <span>Profile Photo</span>
+              </div>
+            </div>
+            <div class="profile-badge">
+              <i class="bi bi-patch-check-fill"></i> Kindergarten Ready
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       3) ABOUT ME
+       ============================================================ -->
+  <section id="about" class="section-padding" data-testid="about-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5 reveal">
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">A friendly helper in the classroom</h2>
+          <p class="section-sub">
+            I love helping young learners grow with kindness, patience, and care.
+          </p>
+        </div>
+        <div class="col-lg-7 reveal">
+          <div class="about-card">
+            <p>
+              I graduated with a <strong>Bachelor of Science in Information Technology</strong>
+              from <strong>Asia-Pacific International University</strong>. I have experience
+              working as a <strong>Kindergarten Teacher Assistant</strong>, supporting K2 and K3
+              students, helping teach Thai language, values education, and classroom activities.
+            </p>
+            <p>
+              I enjoy helping children learn, build confidence, and feel safe in the classroom.
+              I work closely with lead teachers, prepare classroom materials, and support each
+              child so they can enjoy learning at their own pace.
+            </p>
+
+            <div class="row g-3 mt-2">
+              <div class="col-sm-6">
+                <div class="about-fact">
+                  <i class="bi bi-mortarboard-fill"></i>
+                  <div>
+                    <span class="fact-label">Education</span>
+                    <span class="fact-value">B.Sc. Information Technology</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="about-fact">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  <div>
+                    <span class="fact-label">Based in</span>
+                    <span class="fact-value">Bangkok, Thailand</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="about-fact">
+                  <i class="bi bi-people-fill"></i>
+                  <div>
+                    <span class="fact-label">Working with</span>
+                    <span class="fact-value">K2 &amp; K3 Kindergarten</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="about-fact">
+                  <i class="bi bi-translate"></i>
+                  <div>
+                    <span class="fact-label">Languages</span>
+                    <span class="fact-value">Karen, Thai, English</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4) WORK EXPERIENCE (timeline)
+       ============================================================ -->
+  <section id="experience" class="section-padding section-beige" data-testid="experience-section">
+    <div class="container">
+      <div class="text-center reveal mb-5">
+        <span class="section-label">Work Experience</span>
+        <h2 class="section-title">Where I've helped children learn</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"><i class="bi bi-backpack2-fill"></i></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">Kindergarten Teacher Assistant</h3>
+                <p class="timeline-org">
+                  <i class="bi bi-building"></i> Ubon Adventist International Mission School
+                </p>
+              </div>
+              <span class="timeline-year">2024 – 2026</span>
+            </div>
+
+            <p class="timeline-summary">
+              Supporting K2 &amp; K3 classes daily — helping the lead teacher, preparing
+              materials, guiding children through activities, and keeping the classroom
+              safe, warm, and welcoming.
+            </p>
+
+            <ul class="timeline-list">
+              <li><i class="bi bi-check2-circle"></i> Supported the main classroom teacher during lessons and activities.</li>
+              <li><i class="bi bi-check2-circle"></i> Assisted K2 and K3 students with classroom work.</li>
+              <li><i class="bi bi-check2-circle"></i> Helped teach Thai language and values education.</li>
+              <li><i class="bi bi-check2-circle"></i> Prepared teaching materials, worksheets, crafts, and classroom decorations.</li>
+              <li><i class="bi bi-check2-circle"></i> Supervised children during class, lunch, playtime, and school activities.</li>
+              <li><i class="bi bi-check2-circle"></i> Helped students understand instructions and complete their work.</li>
+              <li><i class="bi bi-check2-circle"></i> Recorded weekly grades and student progress.</li>
+              <li><i class="bi bi-check2-circle"></i> Communicated with teachers and parents when needed.</li>
+              <li><i class="bi bi-check2-circle"></i> Helped translate between Thai and English.</li>
+              <li><i class="bi bi-check2-circle"></i> Supported children emotionally and encouraged positive behavior.</li>
+              <li><i class="bi bi-check2-circle"></i> Maintained a safe, clean, and organized classroom.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5) SKILLS
+       ============================================================ -->
+  <section id="skills" class="section-padding" data-testid="skills-section">
+    <div class="container">
+      <div class="text-center reveal mb-5">
+        <span class="section-label">Skills</span>
+        <h2 class="section-title">Skills I bring to the classroom</h2>
+        <p class="section-sub mx-auto" style="max-width: 620px;">
+          A mix of caring people skills, teaching support, and basic IT — everything a
+          modern classroom assistant needs.
+        </p>
+      </div>
+
+      <div class="row g-3">
+        <!-- Each skill is one card. Icons are Bootstrap Icons. -->
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-easel2-fill"></i><span>Classroom Support</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-eye-fill"></i><span>Child Supervision</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-journal-bookmark-fill"></i><span>Lesson Preparation</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-scissors"></i><span>Teaching Material Prep</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-clipboard-data-fill"></i><span>Student Progress Recording</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-chat-heart-fill"></i><span>Parent Communication</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-book-half"></i><span>Thai Language Teaching</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-chat-dots-fill"></i><span>English Communication</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-translate"></i><span>Translation</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-people-fill"></i><span>Teamwork</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-emoji-smile-fill"></i><span>Patience</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-lightbulb-fill"></i><span>Problem Solving</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-clock-history"></i><span>Time Management</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-file-earmark-word-fill"></i><span>Microsoft Office</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-google"></i><span>Google Workspace</span></div></div>
+        <div class="col-6 col-md-4 col-lg-3 reveal"><div class="skill-card"><i class="bi bi-laptop-fill"></i><span>Basic IT Support</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6) DAILY RESPONSIBILITIES
+       ============================================================ -->
+  <section id="responsibilities" class="section-padding section-blue" data-testid="responsibilities-section">
+    <div class="container">
+      <div class="text-center reveal mb-5">
+        <span class="section-label">Daily Responsibilities</span>
+        <h2 class="section-title">A caring day, well organized</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="resp-card">
+            <div class="resp-icon icon-peach"><i class="bi bi-palette-fill"></i></div>
+            <h5>Prepare Classroom Materials</h5>
+            <p>Get worksheets, crafts, and supplies ready before lessons begin.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="resp-card">
+            <div class="resp-icon icon-blue"><i class="bi bi-hand-thumbs-up-fill"></i></div>
+            <h5>Assist Students in Learning</h5>
+            <p>Guide children during activities and help them stay focused and engaged.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="resp-card">
+            <div class="resp-icon icon-mint"><i class="bi bi-diagram-3-fill"></i></div>
+            <h5>Support Classroom Management</h5>
+            <p>Help the lead teacher keep the classroom calm and running smoothly.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="resp-card">
+            <div class="resp-icon icon-lilac"><i class="bi bi-pencil-fill"></i></div>
+            <h5>Help With Reading &amp; Writing</h5>
+            <p>Assist with basic exercises, crafts, and one-on-one practice.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="resp-card">
+            <div class="resp-icon icon-peach"><i class="bi bi-shield-check"></i></div>
+            <h5>Monitor Safety &amp; Behavior</h5>
+            <p>Watch over children during class, lunch, playtime, and events.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="resp-card">
+            <div class="resp-icon icon-blue"><i class="bi bi-clipboard-check-fill"></i></div>
+            <h5>Weekly Grades &amp; Student Work</h5>
+            <p>Prepare student work and record weekly grades and progress notes.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="resp-card">
+            <div class="resp-icon icon-mint"><i class="bi bi-calendar-event-fill"></i></div>
+            <h5>School Events &amp; Activities</h5>
+            <p>Help organize and support school events and special classroom days.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="resp-card">
+            <div class="resp-icon icon-lilac"><i class="bi bi-megaphone-fill"></i></div>
+            <h5>Communicate With Parents</h5>
+            <p>Share important information with teachers and parents clearly and kindly.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="resp-card">
+            <div class="resp-icon icon-peach"><i class="bi bi-house-heart-fill"></i></div>
+            <h5>Clean &amp; Organized Classroom</h5>
+            <p>Keep the classroom tidy, safe, and welcoming every single day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7) TEACHING PHILOSOPHY
+       ============================================================ -->
+  <section id="philosophy" class="section-padding" data-testid="philosophy-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9 reveal">
+          <div class="philosophy-card">
+            <i class="bi bi-quote quote-icon"></i>
+            <p class="philosophy-text">
+              I believe every child learns differently. A good Teacher Assistant should be
+              <em>patient, caring, observant,</em> and ready to support both the student and
+              the classroom teacher. My goal is to help children feel <strong>safe, confident,
+              and happy</strong> while learning.
+            </p>
+            <div class="philosophy-signature">
+              <span class="sig-line"></span>
+              <span>Winia Nawasirikhun</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8) GALLERY
+       ============================================================ -->
+  <section id="gallery" class="section-padding section-beige" data-testid="gallery-section">
+    <div class="container">
+      <div class="text-center reveal mb-5">
+        <span class="section-label">Gallery</span>
+        <h2 class="section-title">Moments from the classroom</h2>
+        <p class="section-sub mx-auto" style="max-width: 620px;">
+          These are placeholder images — real classroom photos will be uploaded here later.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Each tile is a placeholder. Replace src later with real photos. -->
+        <div class="col-sm-6 col-lg-4 reveal">
+          <figure class="gallery-tile">
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80" alt="Classroom activities" onerror="this.parentElement.classList.add('tile-fallback')"/>
+            <figcaption><i class="bi bi-easel2"></i> Classroom activities</figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-6 col-lg-4 reveal">
+          <figure class="gallery-tile">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="Art and craft projects" onerror="this.parentElement.classList.add('tile-fallback')"/>
+            <figcaption><i class="bi bi-palette"></i> Art &amp; craft projects</figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-6 col-lg-4 reveal">
+          <figure class="gallery-tile">
+            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80" alt="Teaching materials" onerror="this.parentElement.classList.add('tile-fallback')"/>
+            <figcaption><i class="bi bi-journal-richtext"></i> Teaching materials</figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-6 col-lg-4 reveal">
+          <figure class="gallery-tile">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="School events" onerror="this.parentElement.classList.add('tile-fallback')"/>
+            <figcaption><i class="bi bi-calendar-event"></i> School events</figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-6 col-lg-4 reveal">
+          <figure class="gallery-tile">
+            <img src="https://images.unsplash.com/photo-1587653263995-422546a7a569?auto=format&fit=crop&w=800&q=80" alt="Student learning activities" onerror="this.parentElement.classList.add('tile-fallback')"/>
+            <figcaption><i class="bi bi-book"></i> Student learning</figcaption>
+          </figure>
+        </div>
+        <div class="col-sm-6 col-lg-4 reveal">
+          <figure class="gallery-tile">
+            <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=800&q=80" alt="Classroom decorations" onerror="this.parentElement.classList.add('tile-fallback')"/>
+            <figcaption><i class="bi bi-flower2"></i> Classroom decorations</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <p class="text-center mt-4 gallery-note">
+        <i class="bi bi-info-circle"></i>
+        Real photos can be uploaded later to replace these placeholders.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9) CERTIFICATES & EDUCATION
+       ============================================================ -->
+  <section id="certificates" class="section-padding" data-testid="certificates-section">
+    <div class="container">
+      <div class="text-center reveal mb-5">
+        <span class="section-label">Education &amp; Certificates</span>
+        <h2 class="section-title">Learning that shaped me</h2>
+      </div>
+
+      <!-- Education (real) -->
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-8 reveal">
+          <div class="edu-card edu-primary">
+            <div class="edu-icon"><i class="bi bi-mortarboard-fill"></i></div>
+            <div>
+              <span class="edu-tag">Education</span>
+              <h4 class="edu-title">Bachelor of Science in Information Technology</h4>
+              <p class="edu-sub"><i class="bi bi-building"></i> Asia-Pacific International University</p>
+              <p class="edu-year"><i class="bi bi-calendar3"></i> Graduated in 2025</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate placeholders -->
+      <div class="text-center reveal mt-5 mb-4">
+        <h3 class="sub-title">Certificate Placeholders</h3>
+        <p class="section-sub">Real certificates can be added here when available.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-award-fill"></i></div>
+            <h6>Teaching / Child Development</h6>
+            <span class="cert-status">Placeholder</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-bandaid-fill"></i></div>
+            <h6>First Aid Training</h6>
+            <span class="cert-status">Placeholder</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-chat-square-text-fill"></i></div>
+            <h6>English Training</h6>
+            <span class="cert-status">Placeholder</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="cert-card">
+            <div class="cert-icon"><i class="bi bi-pc-display"></i></div>
+            <h6>IT &amp; Computer Certificates</h6>
+            <span class="cert-status">Placeholder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       10) LANGUAGES
+       ============================================================ -->
+  <section id="languages" class="section-padding section-beige" data-testid="languages-section">
+    <div class="container">
+      <div class="text-center reveal mb-5">
+        <span class="section-label">Languages</span>
+        <h2 class="section-title">Languages I speak</h2>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-4 reveal">
+          <div class="lang-card">
+            <div class="lang-flag">
+              <i class="bi bi-globe-asia-australia"></i>
+            </div>
+            <h5>Karen</h5>
+            <span class="lang-level lvl-native">Native</span>
+            <div class="lang-bar"><span style="width:100%"></span></div>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="lang-card">
+            <div class="lang-flag">
+              <i class="bi bi-globe2"></i>
+            </div>
+            <h5>Thai</h5>
+            <span class="lang-level lvl-fluent">Fluent</span>
+            <div class="lang-bar"><span style="width:92%"></span></div>
+          </div>
+        </div>
+        <div class="col-md-4 reveal">
+          <div class="lang-card">
+            <div class="lang-flag">
+              <i class="bi bi-chat-square-heart-fill"></i>
+            </div>
+            <h5>English</h5>
+            <span class="lang-level lvl-good">Good working communication</span>
+            <div class="lang-bar"><span style="width:75%"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       11) CONTACT
+       ============================================================ -->
+  <section id="contact" class="section-padding" data-testid="contact-section">
+    <div class="container">
+      <div class="text-center reveal mb-5">
+        <span class="section-label">Contact</span>
+        <h2 class="section-title">Let's talk about your classroom</h2>
+        <p class="section-sub mx-auto" style="max-width: 620px;">
+          I'd be happy to hear from schools, teachers, and families. Send a message below
+          and I will reply as soon as possible.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Contact details -->
+        <div class="col-lg-5 reveal">
+          <div class="contact-info-card">
+            <h5 class="mb-4"><i class="bi bi-info-circle-fill"></i> Contact Info</h5>
+
+            <div class="contact-line">
+              <div class="ci-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div>
+                <span class="ci-label">Location</span>
+                <span class="ci-value">Bangkok, Thailand</span>
+              </div>
+            </div>
+
+            <div class="contact-line">
+              <div class="ci-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div>
+                <span class="ci-label">Email</span>
+                <span class="ci-value">your.email@example.com</span>
+              </div>
+            </div>
+
+            <div class="contact-line">
+              <div class="ci-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div>
+                <span class="ci-label">Phone</span>
+                <span class="ci-value">+66 00 000 0000</span>
+              </div>
+            </div>
+
+            <div class="contact-line">
+              <div class="ci-icon"><i class="bi bi-linkedin"></i></div>
+              <div>
+                <span class="ci-label">LinkedIn</span>
+                <span class="ci-value">linkedin.com/in/your-profile</span>
+              </div>
+            </div>
+
+            <div class="contact-line">
+              <div class="ci-icon"><i class="bi bi-github"></i></div>
+              <div>
+                <span class="ci-label">GitHub</span>
+                <span class="ci-value">github.com/your-username</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div class="col-lg-7 reveal">
+          <form id="contactForm" class="contact-form-card needs-validation" novalidate data-testid="contact-form">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Your full name" required data-testid="contact-name-input" />
+                <div class="invalid-feedback">Please enter your name.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="you@example.com" required data-testid="contact-email-input" />
+                <div class="invalid-feedback">Please enter a valid email.</div>
+              </div>
+              <div class="col-12">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" id="subject" name="subject" class="form-control" placeholder="What is this about?" required data-testid="contact-subject-input" />
+                <div class="invalid-feedback">Please enter a subject.</div>
+              </div>
+              <div class="col-12">
+                <label for="message" class="form-label">Message</label>
+                <textarea id="message" name="message" rows="5" class="form-control" placeholder="Write your message here..." required data-testid="contact-message-input"></textarea>
+                <div class="invalid-feedback">Please write a short message.</div>
+              </div>
+              <div class="col-12 d-flex justify-content-between align-items-center flex-wrap gap-3">
+                <div class="form-status" id="formStatus" role="status" aria-live="polite" data-testid="contact-form-status"></div>
+                <button type="submit" class="btn btn-primary-soft" data-testid="contact-submit-btn">
+                  <i class="bi bi-send-fill"></i> Send Message
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       12) FOOTER
+       ============================================================ -->
+  <footer class="site-footer" data-testid="site-footer">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-0">© 2026 Winia Nawasirikhun. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#home" class="footer-top" data-testid="footer-top-btn">
+            Back to top <i class="bi bi-arrow-up-circle"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
