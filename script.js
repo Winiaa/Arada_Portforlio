@@ -79,9 +79,16 @@
     revealItems.forEach((el) => el.classList.add('is-visible'));
   }
 
-  // ------- 5) Contact form validation (client-side only) -------
+  // ------- 5) Contact form validation + EmailJS submission -------
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
+  const submitButton = form ? form.querySelector('button[type="submit"]') : null;
+
+  const emailConfig = {
+    serviceId: 'service_xxxxx',
+    templateId: 'template_xxxxx',
+    publicKey: 'your_public_key'
+  };
 
   const isValidEmail = (email) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(String(email).trim());
@@ -93,8 +100,20 @@
     status.classList.add(ok ? 'ok' : 'err');
   };
 
+  const setSubmitState = (isSending) => {
+    if (!submitButton) return;
+    submitButton.disabled = isSending;
+    submitButton.innerHTML = isSending
+      ? '<span class="me-2"><i class="bi bi-arrow-repeat"></i></span> Sending...'
+      : '<i class="bi bi-send-fill"></i> Send Message';
+  };
+
   if (form) {
-    form.addEventListener('submit', (e) => {
+    if (typeof window.emailjs !== 'undefined' && emailConfig.publicKey && !emailConfig.publicKey.includes('your_')) {
+      emailjs.init(emailConfig.publicKey);
+    }
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       setStatus('', true);
 
@@ -103,7 +122,6 @@
       const subject = form.querySelector('#subject');
       const message = form.querySelector('#message');
 
-      // Clear previous invalid states
       [name, email, subject, message].forEach((el) => el.classList.remove('is-invalid'));
 
       let ok = true;
@@ -119,15 +137,38 @@
         return;
       }
 
-      // Simulated success (no backend). Replace with real API if needed.
-      setStatus('Thank you! Your message has been sent successfully.', true);
-      form.reset();
+      if (!window.emailjs || emailConfig.serviceId.includes('xxxxx') || emailConfig.templateId.includes('xxxxx') || emailConfig.publicKey.includes('your_')) {
+        setStatus('Email service is not configured yet. Please add your EmailJS credentials in script.js.', false);
+        return;
+      }
 
-      // Auto-clear success message after a few seconds
-      setTimeout(() => setStatus('', true), 6000);
+      setSubmitState(true);
+
+      try {
+        await emailjs.send(
+          emailConfig.serviceId,
+          emailConfig.templateId,
+          {
+            from_name: name.value.trim(),
+            from_email: email.value.trim(),
+            subject: subject.value.trim(),
+            message: message.value.trim(),
+            to_email: 'your.email@example.com'
+          },
+          emailConfig.publicKey
+        );
+
+        setStatus('Thank you! Your message has been sent successfully.', true);
+        form.reset();
+        setTimeout(() => setStatus('', true), 6000);
+      } catch (error) {
+        console.error('EmailJS error:', error);
+        setStatus('Something went wrong while sending the message. Please try again later.', false);
+      } finally {
+        setSubmitState(false);
+      }
     });
 
-    // Live-clear invalid state on typing
     form.querySelectorAll('input, textarea').forEach((el) => {
       el.addEventListener('input', () => el.classList.remove('is-invalid'));
     });
@@ -135,5 +176,5 @@
 
   // ------- 6) Year in footer (kept static per requirements: © 2026) -------
   // If you'd like it dynamic later:
-  // document.querySelector('.site-footer p').textContent = `© ${new Date().getFullYear()} Winia Nawasirikhun. All rights reserved.`;
+  // document.querySelector('.site-footer p').textContent = `© ${new Date().getFullYear()} Arada Nawasirikhun. All rights reserved.`;
 })();
